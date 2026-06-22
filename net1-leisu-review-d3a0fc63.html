@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷速 · 轻量导航式介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafbfc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #1e2a3a;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.4rem 1.5rem;
+    }
+
+    /* ----- 顶部导航 ----- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.8rem;
+      border-bottom: 1px solid #e4e8ed;
+      margin-bottom: 3.2rem;
+    }
+
+    .brand {
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: -0.01em;
+      color: #0b1c2e;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #4b5d73;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1e2a3a;
+    }
+
+    /* ----- hero 区域 ----- */
+    .hero {
+      margin-bottom: 3.6rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+      color: #0b1c2e;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #3b4c5e;
+      max-width: 580px;
+    }
+
+    .highlight {
+      color: #2266aa;
+      font-weight: 500;
+    }
+
+    /* ----- 核心介绍 ----- */
+    .intro {
+      margin-bottom: 3.2rem;
+    }
+
+    .intro h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #0b1c2e;
+    }
+
+    .intro p {
+      font-size: 0.95rem;
+      color: #2c3d50;
+      margin-bottom: 0.6rem;
+    }
+
+    .intro a {
+      color: #2266aa;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(34, 102, 170, 0.2);
+      transition: border-color 0.15s;
+    }
+
+    .intro a:hover {
+      border-bottom-color: #2266aa;
+    }
+
+    /* ----- 三个场景模块 ----- */
+    .scenes {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-bottom: 3.6rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.02);
+      border: 1px solid #eef1f5;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .scene-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #0b1c2e;
+    }
+
+    .scene-card p {
+      font-size: 0.9rem;
+      color: #3b4c5e;
+      line-height: 1.55;
+    }
+
+    /* ----- 常见说明 / FAQ 摘要 ----- */
+    .faq-section {
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .faq-section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #0b1c2e;
+    }
+
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #eef1f5;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #1e2a3a;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-answer {
+      font-size: 0.88rem;
+      color: #4b5d73;
+      line-height: 1.5;
+    }
+
+    .faq-answer a {
+      color: #2266aa;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(34, 102, 170, 0.15);
+    }
+
+    .faq-answer a:hover {
+      border-bottom-color: #2266aa;
+    }
+
+    /* ----- 底部 ----- */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6c7f92;
+      border-top: 1px solid #e4e8ed;
+      padding-top: 2rem;
+      margin-top: 1.2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      .container {
+        padding: 1.6rem 1rem;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding-bottom: 1.2rem;
+        margin-bottom: 2rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .scene-card {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <nav>
+      <span class="brand">雷速</span>
+      <ul class="nav-links">
+        <li><a href="#intro">简介</a></li>
+        <li><a href="#scenes">场景</a></li>
+        <li><a href="#faq">说明</a></li>
+      </ul>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+      <h1>轻量 · 专注 · 信息聚合</h1>
+      <p>围绕「<span class="highlight">雷速</span>」构建的内容索引，帮助你快速理解其定位与使用方式。以下从核心介绍、典型场景和常见问题三个维度展开。</p>
+    </div>
+
+    <!-- 核心介绍 -->
+    <section class="intro" id="intro">
+      <h2>核心介绍</h2>
+      <p><a href="https://net1-leisu.com">雷速</a> 是一个面向信息获取与整合的轻量平台，主要服务于需要快速检索、对比和整理特定领域内容的用户。其设计思路强调低干扰、高效率，避免冗余功能堆叠。</p>
+      <p>平台自身不生产原始数据，而是通过结构化聚合与实时索引，帮助使用者在较短时间内定位到有价值的信息片段。对于关注内容密度与响应速度的用户而言，<a href="https://net1-leisu.com">雷速</a> 提供了一种简洁的交互路径。</p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section class="scenes" id="scenes">
+      <div class="scene-card">
+        <h3>① 信息调研与对比</h3>
+        <p>当需要横向比较多个来源的同类内容时，可通过 <a href="https://net1-leisu.com">雷速</a> 的聚合视图快速拉取关键字段，减少手动切换页面与复制粘贴的步骤。适合需要高频比对参数的场景。</p>
+      </div>
+      <div class="scene-card">
+        <h3>② 领域动态追踪</h3>
+        <p>针对特定行业或主题，设定关注点后，平台会按更新时序呈现相关内容摘要。无需逐个站点检查，即可掌握近期变动。适合需要保持信息同步的日常阅读流。</p>
+      </div>
+      <div class="scene-card">
+        <h3>③ 轻量知识整理</h3>
+        <p>利用内置的标签与分组功能，将分散的链接、片段和笔记归拢至同一界面。所有操作均在本页内完成，不跳转额外编辑器，适合快速搭建个人参考看板。</p>
+      </div>
+    </section>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <section class="faq-section" id="faq">
+      <h2>常见说明</h2>
+      <div class="faq-item">
+        <div class="faq-question">是否需要注册才能使用？</div>
+        <div class="faq-answer">基础检索与浏览功能无需注册。部分个性化订阅或保存配置需要创建账号，具体以 <a href="https://net1-leisu.com">雷速</a> 页面实际指引为准。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">内容来源是否可靠？</div>
+        <div class="faq-answer">平台聚合的数据均来自公开可访问的站点，并保留原始出处链接。建议对重要信息进行二次核实。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">是否支持移动端浏览？</div>
+        <div class="faq-answer">当前版本已适配主流手机浏览器，窄屏下布局自动调整。如需更佳体验，可在桌面端使用。</div>
+      </div>
+    </section>
+
+    <footer>
+      © 雷速 · 简洁信息导航
+    </footer>
+  </div>
+</body>
+</html>
